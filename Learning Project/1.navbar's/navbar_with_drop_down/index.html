@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar With DropDown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #eceaff;
+            color: #575757;
+        }
+
+        nav {
+            background: #1a1a1a;
+            width: 100%;
+            padding: 10px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        nav ul {
+            width: 100%;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .img1 {
+            cursor: pointer;
+            margin-left: 50px;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+
+        .menu-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 10%;
+            width: 320px;
+            max-height: 0px;
+            transition: max-height 0.5s;
+            overflow: hidden;
+        }
+
+        .menu-dropdown.open-menu {
+            max-height: 400px;
+        }
+
+        .sub-menu {
+            background-color: rgb(254, 254, 254);
+            padding: 14px;
+            margin: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info h1 {
+            font-size: 20px;
+            font-weight: 799;
+        }
+
+        .user-info img {
+            width: 60px;
+            margin-right: 10px;
+        }
+
+        .menu-dropdown hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background: #000000;
+            margin: 15px 10px;
+        }
+
+        .menu-link {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            padding: 10px 0;
+            margin-left: 10px;
+        }
+
+        .sub-menu p {
+            width: 100%;
+        }
+
+        .menu-link:hover {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+            <H1>logo</H1>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+
+                <li><a href="">Resume</a></li>
+                <li><a href="">Contract</a></li>
+            </ul>
+            <img src="./img.png" class="img1" onclick="menu()" alt="">
+            <div class="menu-dropdown" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="./img.png" class="img1">
+                        <h1>Ankit Mehta</h1>
+                    </div>
+                    <hr>
+                    <a href="" class="menu-link">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <hr>
+                    <a href="" class="menu-link">
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <hr>
+                    <a href="" class="menu-link">
+                        <p>Log Out</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+        let subMenu = document.getElementById("subMenu")
+        function menu() {
+            subMenu.classList.toggle("open-menu")
+        }
+    </script>
+</body>
+
+</html>
